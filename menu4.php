@@ -23,9 +23,20 @@
         <li><a href="ganadores.php">Ganadores</a></li>
       </ul>
 
+       <ul id="dropdown3" class="dropdown-content">
+        <li><a href="http://concursos.beneficioslaaraucana.cl/verano2018/bases.php">Bases</a></li>
+        <li class="divider"></li>
+        <li><a href="http://concursos.beneficioslaaraucana.cl/verano2018/">Formulario</a></li>
+        <li class="divider"></li>
+        <li><a href="http://concursos.beneficioslaaraucana.cl/participantesVerano2018/">Participantes</a></li>
+        <li class="divider"></li>
+        <li><a href="http://concursos.beneficioslaaraucana.cl/participantesVerano2018/ganadores.php">Ganadores</a></li>
+      </ul>
+
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Selección<i class="material-icons right">arrow_drop_down</i></a></li>
         <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Buscar Ganador<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown3">Concurso<i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
         <li class="bold" style="color: black"><h5>Selección</h5></li>
