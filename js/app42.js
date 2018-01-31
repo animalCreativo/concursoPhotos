@@ -10,7 +10,7 @@
 firebase.initializeApp(config);
 
  // Get a reference to the storage service, which is used to create references in your storage bucket
-var imagesFBRef = firebase.database().ref().child('fotos').orderByChild("v_p_notW").equalTo("true");
+var imagesFBRef = firebase.database().ref().child('fotos').orderByChild("v_p_notW").equalTo("cat_2");
 var paginaActual = 1;
 
 $( document ).ready(function() {
@@ -29,7 +29,7 @@ function loadImages(){
     var itemPorPagina = 6;
 
     if (datos == null){
-      document.getElementById('addPhoto').innerHTML = "<p> No hay elemetos para mostrar</p>";  
+      document.getElementById('addPhoto').innerHTML = `<h4 style="color: #315594;padding: 10px;" > No hay elemetos para mostrar</h4>`;   
     }else {
 
       var numeroImagenes = Object.keys(datos).length;
@@ -59,7 +59,7 @@ function loadImages(){
         if (codigoTotal.includes("star_border")){
           codigo = codigoTotal.replace("star_border","");
           var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
-          updateRefFB.update({v_p_w:"true"});
+          updateRefFB.update({v_p_w:"cat_2"});
         }else {
           codigo = codigoTotal.replace("star","");
           var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
@@ -96,7 +96,7 @@ function loadImages(){
             if (codigoTotal.includes("star_border")){
               codigo = codigoTotal.replace("star_border","");
               var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
-              updateRefFB.update({v_p_w:"true"});
+              updateRefFB.update({v_p_w:"cat_2"});
             }else {
               codigo = codigoTotal.replace("star","");
               var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
@@ -136,7 +136,7 @@ function loadImages(){
               if (codigoTotal.includes("star_border")){
                 codigo = codigoTotal.replace("star_border","");
                 var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
-                updateRefFB.update({v_p_w:"true"});
+                updateRefFB.update({v_p_w:"cat_2"});
               }else {
                 codigo = codigoTotal.replace("star","");
                 var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
@@ -199,7 +199,7 @@ function writeImageDom(datos, itemPorPagina,numeroImagenes,inicio){
     // load cartas
     for (var key in datos){
       if (i >= inicio && i< final){
-        if(datos[key].v_p_w == "true"){
+        if(datos[key].v_p_w == "cat_2"){
           resultado += `<div class="col s6 m3 ">
                       <div id="12ab" class="card">
                         <div class="card-image ">  
@@ -209,7 +209,7 @@ function writeImageDom(datos, itemPorPagina,numeroImagenes,inicio){
                           <a class="btn-floating halfway-fab waves-effect waves-light red" style="left: 24px; right: 0px;">
                             <i alt="`+key+`" class="check material-icons">clear</i>
                           </a>
-                           <a class="btn-floating halfway-fab waves-effect waves-light green">
+                           <a class="btn-floating halfway-fab waves-effect waves-light purple">
                             <i alt="`+key+"star"+`" class="favoriteBtn material-icons">star</i>
                           </a>
 
@@ -220,7 +220,7 @@ function writeImageDom(datos, itemPorPagina,numeroImagenes,inicio){
                         </div>
                       </div>
                     </div>`;
-        }else {
+        }else if(datos[key].v_p_w == "false"){
           resultado += `<div class="col s6 m3 ">
                       <div id="12ab" class="card">
                         <div class="card-image ">  
@@ -230,7 +230,7 @@ function writeImageDom(datos, itemPorPagina,numeroImagenes,inicio){
                           <a class="btn-floating halfway-fab waves-effect waves-light red" style="left: 24px; right: 0px;">
                             <i alt="`+key+`" class="check material-icons">clear</i>
                           </a>
-                          <a class="btn-floating halfway-fab waves-effect waves-light green">
+                          <a class="btn-floating halfway-fab waves-effect waves-light purple">
                             <i alt="`+key+"star_border"+`" class="favoriteBtn material-icons">star_border</i>
                           </a>
 

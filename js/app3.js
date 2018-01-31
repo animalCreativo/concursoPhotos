@@ -7,10 +7,10 @@
     messagingSenderId: "454182483820"
 };
 
-firebase.initializeApp(config);
+firebase.initializeApp(config); 
 
  // Get a reference to the storage service, which is used to create references in your storage bucket
-var imagesFBRef = firebase.database().ref().child('fotos').orderByChild("v_notP").equalTo("true");
+var imagesFBRef = firebase.database().ref().child('fotos').orderByChild("v_notP").equalTo("validado");
 var paginaActual = 1;
 
 $( document ).ready(function() {
@@ -29,7 +29,7 @@ function loadImages(){
     var itemPorPagina = 12;
 
     if (datos == null){
-      document.getElementById('addPhoto').innerHTML = "<p> No hay elemetos para mostrar</p>";  
+      document.getElementById('addPhoto').innerHTML = `<h4 style="color: #315594;padding: 10px;" > No hay elemetos para mostrar</h4>`;   
     }else {
 
       var numeroImagenes = Object.keys(datos).length;
@@ -50,7 +50,43 @@ function loadImages(){
         if (codigoTotal.includes("favorite_border")){
           codigo = codigoTotal.replace("favorite_border","");
           var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
-          updateRefFB.update({v_p_notW:"true"});
+          updateRefFB.update({v_p_notW:"cat_1"});
+          updateRefFB.update({v_p_w:"false"});
+
+        }else {
+          codigo = codigoTotal.replace("favorite","");
+          var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
+          updateRefFB.update({v_p_notW:"false"});
+          updateRefFB.update({v_p_w:"false"});
+        }
+        console.log("codigo:",codigo);
+      });
+
+      $('.check2').click(function(){
+        var codigoTotal =$(this).attr('alt');
+        var codigo ="";
+        if (codigoTotal.includes("favorite_border")){
+          codigo = codigoTotal.replace("favorite_border","");
+          var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
+          updateRefFB.update({v_p_notW:"cat_2"});
+          updateRefFB.update({v_p_w:"false"});
+        }else {
+          codigo = codigoTotal.replace("favorite","");
+          var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
+          updateRefFB.update({v_p_notW:"false"});
+          updateRefFB.update({v_p_w:"false"});
+        }
+        console.log("codigo:",codigo);
+      });
+
+      $('.check3').click(function(){
+        var codigoTotal =$(this).attr('alt');
+        var codigo ="";
+        if (codigoTotal.includes("favorite_border")){
+          codigo = codigoTotal.replace("favorite_border","");
+          var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
+          updateRefFB.update({v_p_notW:"cat_3"});
+          updateRefFB.update({v_p_w:"false"});
         }else {
           codigo = codigoTotal.replace("favorite","");
           var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
@@ -75,20 +111,55 @@ function loadImages(){
           $('.materialboxed').materialbox();
 
           $('.check').click(function(){
-              var codigoTotal =$(this).attr('alt');
-              var codigo ="";
-              if (codigoTotal.includes("favorite_border")){
-                codigo = codigoTotal.replace("favorite_border","");
-                var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
-                updateRefFB.update({v_p_notW:"true"});
-              }else {
-                codigo = codigoTotal.replace("favorite","");
-                var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
-                updateRefFB.update({v_p_notW:"false"});
-                updateRefFB.update({v_p_w:"false"});
-              }
-              console.log("codigo:",codigo);
-            });
+            var codigoTotal =$(this).attr('alt');
+            var codigo ="";
+            if (codigoTotal.includes("favorite_border")){
+              codigo = codigoTotal.replace("favorite_border","");
+              var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
+              updateRefFB.update({v_p_notW:"cat_1"});
+              updateRefFB.update({v_p_w:"false"});
+            }else {
+              codigo = codigoTotal.replace("favorite","");
+              var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
+              updateRefFB.update({v_p_notW:"false"});
+              updateRefFB.update({v_p_w:"false"});
+            }
+            console.log("codigo:",codigo);
+          });
+
+          $('.check2').click(function(){
+            var codigoTotal =$(this).attr('alt');
+            var codigo ="";
+            if (codigoTotal.includes("favorite_border")){
+              codigo = codigoTotal.replace("favorite_border","");
+              var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
+              updateRefFB.update({v_p_notW:"cat_2"});
+              updateRefFB.update({v_p_w:"false"});
+            }else {
+              codigo = codigoTotal.replace("favorite","");
+              var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
+              updateRefFB.update({v_p_notW:"false"});
+              updateRefFB.update({v_p_w:"false"});
+            }
+            console.log("codigo:",codigo);
+          });
+
+          $('.check3').click(function(){
+            var codigoTotal =$(this).attr('alt');
+            var codigo ="";
+            if (codigoTotal.includes("favorite_border")){
+              codigo = codigoTotal.replace("favorite_border","");
+              var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
+              updateRefFB.update({v_p_notW:"cat_3"});
+              updateRefFB.update({v_p_w:"false"});
+            }else {
+              codigo = codigoTotal.replace("favorite","");
+              var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
+              updateRefFB.update({v_p_notW:"false"});
+              updateRefFB.update({v_p_w:"false"});
+            }
+            console.log("codigo:",codigo);
+          });
         }
       });
 
@@ -112,7 +183,8 @@ function loadImages(){
               if (codigoTotal.includes("favorite_border")){
                 codigo = codigoTotal.replace("favorite_border","");
                 var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
-                updateRefFB.update({v_p_notW:"true"});
+                updateRefFB.update({v_p_notW:"cat_1"});
+                updateRefFB.update({v_p_w:"false"});
               }else {
                 codigo = codigoTotal.replace("favorite","");
                 var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
@@ -121,6 +193,41 @@ function loadImages(){
               }
               console.log("codigo:",codigo);
             });
+
+            $('.check2').click(function(){
+              var codigoTotal =$(this).attr('alt');
+              var codigo ="";
+              if (codigoTotal.includes("favorite_border")){
+                codigo = codigoTotal.replace("favorite_border","");
+                var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
+                updateRefFB.update({v_p_notW:"cat_2"});
+                updateRefFB.update({v_p_w:"false"});
+              }else {
+                codigo = codigoTotal.replace("favorite","");
+                var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
+                updateRefFB.update({v_p_notW:"false"});
+                updateRefFB.update({v_p_w:"false"});
+              }
+              console.log("codigo:",codigo);
+            });
+
+            $('.check3').click(function(){
+              var codigoTotal =$(this).attr('alt');
+              var codigo ="";
+              if (codigoTotal.includes("favorite_border")){
+                codigo = codigoTotal.replace("favorite_border","");
+                var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
+                updateRefFB.update({v_p_notW:"cat_3"});
+                updateRefFB.update({v_p_w:"false"});
+              }else {
+                codigo = codigoTotal.replace("favorite","");
+                var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
+                updateRefFB.update({v_p_notW:"false"});
+                updateRefFB.update({v_p_w:"false"});
+              }
+              console.log("codigo:",codigo);
+            });
+
           }
       });
     }
@@ -176,7 +283,7 @@ function writeImageDom(datos, itemPorPagina,numeroImagenes,inicio){
     for (var key in datos){
       if (i >= inicio && i< final){
 
-        if(datos[key].v_p_notW == "true"){
+        if(datos[key].v_p_notW == "cat_1"){
 
           resultado += `<div class="col s6 m3 ">
                       <div id="12ab" class="card">
@@ -184,9 +291,15 @@ function writeImageDom(datos, itemPorPagina,numeroImagenes,inicio){
                           <a target="_blank" href="`+datos[key].urlImagen+`"> 
                             <img style="min-height=300px;" src="`+datos[key].urlImagen_thumb+`">
                           </a>
-                          <a class="btn-floating halfway-fab waves-effect waves-light orange">
+                          <a class="btn-floating halfway-fab waves-effect waves-light orange" style="right: 95px;">
                             <i alt="`+key+"favorite"+`" class="check material-icons">favorite</i>
                           </a>
+                          <a class="btn-floating halfway-fab waves-effect waves-light purple" style="right: 50px;">
+                            <i alt="`+key+"favorite_border"+`" class="check2 material-icons">favorite_border</i>
+                          </a>
+                          <a class="btn-floating halfway-fab waves-effect waves-light green" style="right: 5px;">
+                            <i alt="`+key+"favorite_border"+`" class="check3 material-icons">favorite_border</i>
+                          </a>
                         </div>
                         <div class="card-content">
                           <p style="text-align:left; font-weight:bolder;">Código</p>
@@ -195,15 +308,22 @@ function writeImageDom(datos, itemPorPagina,numeroImagenes,inicio){
                       </div>
                     </div>`;
 
-        }else {
+        }else if(datos[key].v_p_notW == "cat_2"){
+
           resultado += `<div class="col s6 m3 ">
                       <div id="12ab" class="card">
                         <div class="card-image ">  
                           <a target="_blank" href="`+datos[key].urlImagen+`"> 
                             <img style="min-height=300px;" src="`+datos[key].urlImagen_thumb+`">
                           </a>
-                          <a class="btn-floating halfway-fab waves-effect waves-light orange">
+                          <a class="btn-floating halfway-fab waves-effect waves-light orange" style="right: 95px;">
                             <i alt="`+key+"favorite_border"+`" class="check material-icons">favorite_border</i>
+                          </a>
+                          <a class="btn-floating halfway-fab waves-effect waves-light purple" style="right: 50px;">
+                            <i alt="`+key+"favorite"+`" class="check2 material-icons">favorite</i>
+                          </a>
+                          <a class="btn-floating halfway-fab waves-effect waves-light green" style="right: 5px;">
+                            <i alt="`+key+"favorite_border"+`" class="check3 material-icons">favorite_border</i>
                           </a>
                         </div>
                         <div class="card-content">
@@ -212,7 +332,58 @@ function writeImageDom(datos, itemPorPagina,numeroImagenes,inicio){
                         </div>
                       </div>
                     </div>`;
-        } 
+
+        }else if(datos[key].v_p_notW == "cat_3"){
+
+          resultado += `<div class="col s6 m3 ">
+                      <div id="12ab" class="card">
+                        <div class="card-image ">  
+                          <a target="_blank" href="`+datos[key].urlImagen+`"> 
+                            <img style="min-height=300px;" src="`+datos[key].urlImagen_thumb+`">
+                          </a>
+                          <a class="btn-floating halfway-fab waves-effect waves-light orange" style="right: 95px;">
+                            <i alt="`+key+"favorite_border"+`" class="check material-icons">favorite_border</i>
+                          </a>
+                          <a class="btn-floating halfway-fab waves-effect waves-light purple" style="right: 50px;">
+                            <i alt="`+key+"favorite_border"+`" class="check2 material-icons">favorite_border</i>
+                          </a>
+                          <a class="btn-floating halfway-fab waves-effect waves-light green" style="right: 5px;">
+                            <i alt="`+key+"favorite"+`" class="check3 material-icons">favorite</i>
+                          </a>
+                        </div>
+                        <div class="card-content">
+                          <p style="text-align:left; font-weight:bolder;">Código</p>
+                          <p class="key1" style="text-align:center">`+key+`</p>
+                        </div>
+                      </div>
+                    </div>`;
+
+        }else if(datos[key].v_p_notW == "false"){
+
+          resultado += `<div class="col s6 m3 ">
+                      <div id="12ab" class="card">
+                        <div class="card-image ">  
+                          <a target="_blank" href="`+datos[key].urlImagen+`"> 
+                            <img style="min-height=300px;" src="`+datos[key].urlImagen_thumb+`">
+                          </a>
+                          <a class="btn-floating halfway-fab waves-effect waves-light orange" style="right: 95px;">
+                            <i alt="`+key+"favorite_border"+`" class="check material-icons">favorite_border</i>
+                          </a>
+                          <a class="btn-floating halfway-fab waves-effect waves-light purple" style="right: 50px;">
+                            <i alt="`+key+"favorite_border"+`" class="check2 material-icons" >favorite_border</i>
+                          </a>
+                          <a class="btn-floating halfway-fab waves-effect waves-light green" style="right: 5px;">
+                            <i alt="`+key+"favorite_border"+`" class="check3 material-icons">favorite_border</i>
+                          </a>
+                        </div>
+                        <div class="card-content">
+                          <p style="text-align:left; font-weight:bolder;">Código</p>
+                          <p class="key1" style="text-align:center">`+key+`</p>
+                        </div>
+                      </div>
+                    </div>`;
+
+        }
        console.log("url",key);
       }
       i= i+1;  

@@ -1,6 +1,6 @@
 
 <?php include("header.php"); ?>
-<?php include("menu3.php"); ?>
+<?php include("menu.php"); ?>
 <?php include("slider.php"); ?>
 
 <div class="col s12">

@@ -1,4 +1,4 @@
-var config = {
+ var config = {
     apiKey: "AIzaSyBtIwxxhd-VUEdje1Q8FhHkhWc3-ihsmUQ",
     authDomain: "fotogramashow.firebaseapp.com",
     databaseURL: "https://fotogramashow.firebaseio.com",
@@ -10,18 +10,15 @@ var config = {
 firebase.initializeApp(config);
 
  // Get a reference to the storage service, which is used to create references in your storage bucket
-var imagesFBRef = firebase.database().ref().child('fotos').orderByChild("v").equalTo("false");
-
+var imagesFBRef = firebase.database().ref().child('fotos').orderByChild("v_notP").equalTo("rechazado");
 var paginaActual = 1;
-
-
+  
 $( document ).ready(function() {
     console.log( "ready!" );
     $('.materialboxed').materialbox();
     loadImages();   
-    $(".dropdown-button").dropdown();  
-    $(".button-collapse").sideNav(); 
-    
+     $(".dropdown-button").dropdown();  
+    $(".button-collapse").sideNav();    
 });
 
 function loadImages(){
@@ -29,14 +26,14 @@ function loadImages(){
 
     var datos = snapshot.val();
     // load paginador
-    var itemPorPagina = 23;
+    var itemPorPagina = 6;
+    console.log("datos",datos);
 
     if (datos == null){
-      document.getElementById('addPhoto').innerHTML = `<h4 style="color: #315594;padding: 10px;" > No hay elemetos para mostrar</h4>`;              
+      document.getElementById('addPhoto').innerHTML = `<h4 style="color: #315594;padding: 10px;" > No hay elemetos para mostrar</h4>`;   
     }else {
 
       var numeroImagenes = Object.keys(datos).length;
-
       var numeroPaginas = Math.ceil(numeroImagenes/itemPorPagina) ;
       console.log("numeroImagenes",numeroImagenes);
       console.log("itemPorPagina",itemPorPagina);
@@ -52,14 +49,6 @@ function loadImages(){
         var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
         updateRefFB.update({v:"true"});
         updateRefFB.update({v_notP:"validado"});
-        console.log("codigo:",codigo);
-        
-      });
-      $('.check2').click(function(){
-        var codigo =$(this).attr('alt');
-        var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
-        updateRefFB.update({v:"true"});
-        updateRefFB.update({v_notP:"rechazado"});
         console.log("codigo:",codigo);
         
       });
@@ -85,14 +74,6 @@ function loadImages(){
             updateRefFB.update({v_notP:"validado"});
             console.log("codigo:",codigo);
          });
-          $('.check2').click(function(){
-          var codigo =$(this).attr('alt');
-          var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
-          updateRefFB.update({v:"true"});
-          updateRefFB.update({v_notP:"rechazado"});
-          console.log("codigo:",codigo);
-          
-        });
         }
       });
 
@@ -117,17 +98,10 @@ function loadImages(){
               updateRefFB.update({v_notP:"validado"});
               console.log("codigo:",codigo);
             });
-            $('.check2').click(function(){
-              var codigo =$(this).attr('alt');
-              var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
-              updateRefFB.update({v:"true"});
-              updateRefFB.update({v_notP:"rechazado"});
-              console.log("codigo:",codigo);
-              
-            });
           }
       });
     }
+    
   })
 }
 
@@ -181,22 +155,17 @@ function writeImageDom(datos, itemPorPagina,numeroImagenes,inicio){
       if (i >= inicio && i< final){
         resultado += `<div class="col s6 m2 ">
                       <div id="12ab" class="card">
-                        <div class="card-image "> 
-                          <a target="_blank" href="`+datos[key].urlImagen+`">  
+                        <div class="card-image ">  
+                          <a target="_blank" href="`+datos[key].urlImagen+`"> 
                             <img style="min-height=300px;" src="`+datos[key].urlImagen_thumb+`">
                           </a>
-                          <a class="btn-floating halfway-fab waves-effect waves-light blue" style="right: 50px;">
-                            <i alt="`+key+`" class="check material-icons">check</i>
-                          </a>
-                          <a class="btn-floating halfway-fab waves-effect waves-light red" style="right: 5px;">
-                            <i alt="`+key+`" class="check2 material-icons">clear</i>
+                          <a class="btn-floating halfway-fab waves-effect waves-light red">
+                            <i alt="`+key+`" class="check material-icons">clear</i>
                           </a>
                         </div>
                         <div class="card-content">
-                          <div class="divId" >
-                            <p style="text-align:left; font-weight:bolder;">Código</p>
-                            <p class="key1" style="text-align:center">`+key+`</p>
-                          </div>
+                         <p style="text-align:left; font-weight:bolder;">Código</p>
+                         <p class="key1" style="text-align:center">`+key+`</p>
                         </div>
                       </div>
                     </div>`;

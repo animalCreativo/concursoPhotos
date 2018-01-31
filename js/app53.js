@@ -10,7 +10,7 @@
 firebase.initializeApp(config);
 
  // Get a reference to the storage service, which is used to create references in your storage bucket
-var imagesFBRef = firebase.database().ref().child('fotos').orderByChild("v_p_w").equalTo("true");
+var imagesFBRef = firebase.database().ref().child('fotos').orderByChild("v_p_w").equalTo("cat_3");
 var paginaActual = 1;
 var datosWinner = firebase.database().ref('registroConcursante'); 
 
@@ -29,7 +29,7 @@ function loadImages(){
     // load paginador
     var itemPorPagina = 6;
     if (datos == null){
-      document.getElementById('addPhoto').innerHTML = "<p> No hay elemetos para mostrar</p>";  
+      document.getElementById('addPhoto').innerHTML = `<h4 style="color: #315594;padding: 10px;" > No hay elemetos para mostrar</h4>`;    
     }else {
 
       var numeroImagenes = Object.keys(datos).length;

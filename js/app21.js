@@ -10,7 +10,7 @@
 firebase.initializeApp(config);
 
  // Get a reference to the storage service, which is used to create references in your storage bucket
-var imagesFBRef = firebase.database().ref().child('fotos').orderByChild("v").equalTo("true");
+var imagesFBRef = firebase.database().ref().child('fotos').orderByChild("v_notP").equalTo("validado");
 var paginaActual = 1;
   
 $( document ).ready(function() {
@@ -30,7 +30,7 @@ function loadImages(){
     console.log("datos",datos);
 
     if (datos == null){
-      document.getElementById('addPhoto').innerHTML = "<p> No hay elemetos para mostrar</p>";  
+      document.getElementById('addPhoto').innerHTML = `<h4 style="color: #315594;padding: 10px;" > No hay elemetos para mostrar</h4>`;  
     }else {
 
       var numeroImagenes = Object.keys(datos).length;
@@ -47,8 +47,8 @@ function loadImages(){
       $('.check').click(function(){
         var codigo =$(this).attr('alt');
         var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
-        updateRefFB.update({v:"false"});
-        updateRefFB.update({v_notP:"false"});
+        updateRefFB.update({v:"true"});
+        updateRefFB.update({v_notP:"rechazado"});
         console.log("codigo:",codigo);
         
       });
@@ -70,8 +70,8 @@ function loadImages(){
           $('.check').click(function(){
             var codigo =$(this).attr('alt');
             var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
-            updateRefFB.update({v:"false"});
-            updateRefFB.update({v_notP:"false"});
+            updateRefFB.update({v:"true"});
+            updateRefFB.update({v_notP:"rechazado"});
             console.log("codigo:",codigo);
          });
         }
@@ -94,8 +94,8 @@ function loadImages(){
             $('.check').click(function(){
               var codigo =$(this).attr('alt');
               var updateRefFB = firebase.database().ref().child('fotos/'+codigo);
-              updateRefFB.update({v:"false"});
-              updateRefFB.update({v_notP:"false"});
+              updateRefFB.update({v:"true"});
+              updateRefFB.update({v_notP:"rechazado"});
               console.log("codigo:",codigo);
             });
           }
