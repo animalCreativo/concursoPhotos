@@ -21,14 +21,14 @@
         <li><a href="participantes.php">Participantes</a></li>
         <li class="divider"></li>
         <li><a href="#!">PreSeleccionadas</a></li>
-        <li><a href="pre_seleccionados_cat1.php"><i class="material-icons" style="color: orange">favorite</i>Categoría 1</a></li>
-        <li><a href="pre_seleccionados_cat2.php"><i class="material-icons " style="color: purple">favorite</i>Categoría 2</a></li>
-        <li><a href="pre_seleccionados_cat3.php"><i class="material-icons " style="color: green">favorite</i>Categoría 3</a></li>
+        <li><a href="pre_seleccionados_cat1.php"><i class="material-icons " style="color: orange">favorite</i>Uso de Técnica</a></li>
+        <li><a href="pre_seleccionados_cat2.php"><i class="material-icons " style="color: purple">favorite</i>Ajuste a la Temática </a></li>
+        <li><a href="pre_seleccionados_cat3.php"><i class="material-icons " style="color: green">favorite</i>Creatividad e Innovación</a></li>
         <li class="divider"></li>
         <li><a href="#!">Ganadores</a></li>
-        <li><a href="ganadores_cat1.php"><i class="material-icons" style="color: orange">star</i>Categoría 1</a></li>
-        <li><a href="ganadores_cat2.php"><i class="material-icons" style="color: purple">star</i>Categoría 2</a></li>
-        <li><a href="ganadores_cat3.php"><i class="material-icons" style="color: green">star</i>Categoría 3</a></li>
+        <li><a href="ganadores_cat1.php"><i class="material-icons" style="color: orange">star</i>Uso de Técnica</a></li>
+        <li><a href="ganadores_cat2.php"><i class="material-icons" style="color: purple">star</i>Ajuste a la Temática </a></li>
+        <li><a href="ganadores_cat3.php"><i class="material-icons" style="color: green">star</i>Creatividad e Innovación</a></li>
       </ul>
 
       <ul id="dropdown3" class="dropdown-content">
@@ -38,11 +38,11 @@
         <li class="divider"></li>
         <li><a href="http://concursos.beneficioslaaraucana.cl/participantesVerano2018/" target="_blank">Participantes</a></li>
         <li class="divider"></li>
-        <li><a href="http://concursos.beneficioslaaraucana.cl/participantesVerano2018/ganadores1.php" target="_blank">Ganadores Categoria 1</a></li>
+        <li><a href="http://concursos.beneficioslaaraucana.cl/participantesVerano2018/ganadores1.php" target="_blank">Ganadores Uso de Técnica</a></li>
         <li class="divider"></li>
-        <li><a href="http://concursos.beneficioslaaraucana.cl/participantesVerano2018/ganadores2.php" target="_blank">Ganadores Categoria 2</a></li>
+        <li><a href="http://concursos.beneficioslaaraucana.cl/participantesVerano2018/ganadores2.php" target="_blank">Ganadores Ajuste a la Temática</a></li>
         <li class="divider"></li>
-        <li><a href="http://concursos.beneficioslaaraucana.cl/participantesVerano2018/ganadores3.php" target="_blank">Ganadores Categoria 3</a></li>
+        <li><a href="http://concursos.beneficioslaaraucana.cl/participantesVerano2018/ganadores3.php" target="_blank">Ganadores Creatividad e Innovación</a></li>
       </ul>
 
       <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -58,20 +58,20 @@
         <li class="bold" style="color: black"><h5>Buscar Ganador</h5></li>
         <li class="bold"><a href="participantes.php" class="waves-effect waves-teal">Participantes</a></li>
         <li class="bold"><a href="#!" class="waves-effect waves-teal">&nbsp &nbsp PreSeleccionadas</a></li>
-        <li class="bold"><a href="pre_seleccionados_cat1.php" class="waves-effect waves-teal">&nbsp &nbsp <i class="material-icons" style="color: orange">favorite</i>Categoría 1</a></li>
-        <li class="bold"><a href="pre_seleccionados_cat2.php" class="waves-effect waves-teal">&nbsp &nbsp <i class="material-icons" style="color: purple">favorite</i>Categoría 2</a></li>
-        <li class="bold"><a href="pre_seleccionados_cat3.php" class="waves-effect waves-teal">&nbsp &nbsp <i class="material-icons" style="color: green">favorite</i>Categoría 3</a></li>
+        <li class="bold"><a href="pre_seleccionados_cat1.php" class="waves-effect waves-teal">&nbsp &nbsp <i class="material-icons" style="color: orange">favorite</i>Uso de Técnica</a></li>
+        <li class="bold"><a href="pre_seleccionados_cat2.php" class="waves-effect waves-teal">&nbsp &nbsp <i class="material-icons" style="color: purple">favorite</i>Ajuste a la Temática</a></li>
+        <li class="bold"><a href="pre_seleccionados_cat3.php" class="waves-effect waves-teal">&nbsp &nbsp <i class="material-icons" style="color: green">favorite</i>Creatividad e Innovación</a></li>
         <li class="bold"><a href="#!" class="waves-effect waves-teal">&nbsp &nbsp Ganadores</a></li>
-        <li class="bold"><a href="ganadores_cat1.php" class="waves-effect waves-teal">&nbsp &nbsp <i class="material-icons" style="color: orange">star</i>Categoría 1</a></li>
-        <li class="bold"><a href="ganadores_cat2.php" class="waves-effect waves-teal">&nbsp &nbsp <i class="material-icons" style="color: purple">star</i>Categoría 2</a></li>
-        <li class="bold"><a href="ganadores_cat3.php" class="waves-effect waves-teal">&nbsp &nbsp <i class="material-icons" style="color: green">star</i>Categoría 3</a></li>
+        <li class="bold"><a href="ganadores_cat1.php" class="waves-effect waves-teal">&nbsp &nbsp <i class="material-icons" style="color: orange">star</i>Uso de Técnica</a></li>
+        <li class="bold"><a href="ganadores_cat2.php" class="waves-effect waves-teal">&nbsp &nbsp <i class="material-icons" style="color: purple">star</i>Ajuste a la Temática</a></li>
+        <li class="bold"><a href="ganadores_cat3.php" class="waves-effect waves-teal">&nbsp &nbsp <i class="material-icons" style="color: green">star</i>Creatividad e Innovación</a></li>
         <li class="bold" style="color: black"><h5>Concurso</h5></li>
         <li class="bold"><a href="http://concursos.beneficioslaaraucana.cl/verano2018/bases.php" class="waves-effect waves-teal" target="_blank">&nbsp &nbsp  Bases</a></li>
         <li class="bold"><a href="http://concursos.beneficioslaaraucana.cl/verano2018/" class="waves-effect waves-teal" target="_blank">&nbsp &nbsp  Formulario</a></li>
         <li class="bold"><a href="http://concursos.beneficioslaaraucana.cl/participantesVerano2018/" class="waves-effect waves-teal" target="_blank">&nbsp &nbsp Participantes</a></li>
-        <li class="bold"><a href="http://concursos.beneficioslaaraucana.cl/participantesVerano2018/ganadores1.php" class="waves-effect waves-teal" target="_blank">&nbsp &nbsp   Ganadores 1</a></li>
-        <li class="bold"><a href="http://concursos.beneficioslaaraucana.cl/participantesVerano2018/ganadores2.php" class="waves-effect waves-teal" target="_blank">&nbsp &nbsp   Ganadores 2</a></li>
-        <li class="bold"><a href="http://concursos.beneficioslaaraucana.cl/participantesVerano2018/ganadores3.php" class="waves-effect waves-teal" target="_blank">&nbsp &nbsp   Ganadores 3</a></li>
+        <li class="bold"><a href="http://concursos.beneficioslaaraucana.cl/participantesVerano2018/ganadores1.php" class="waves-effect waves-teal" target="_blank">&nbsp &nbsp   Uso de Técnica</a></li>
+        <li class="bold"><a href="http://concursos.beneficioslaaraucana.cl/participantesVerano2018/ganadores2.php" class="waves-effect waves-teal" target="_blank">&nbsp &nbsp   Ajuste a la Temática</a></li>
+        <li class="bold"><a href="http://concursos.beneficioslaaraucana.cl/participantesVerano2018/ganadores3.php" class="waves-effect waves-teal" target="_blank">&nbsp &nbsp   Creatividad e Innovación</a></li>
       </ul>
 
 

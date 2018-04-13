@@ -12,6 +12,9 @@ nav {
     /* line-height: 56px; */
     border-bottom: 2px solid white;
 }
+ul#dropdown2 {
+    width: auto !important;
+}
 
 nav .brand-logo {
     position: absolute;

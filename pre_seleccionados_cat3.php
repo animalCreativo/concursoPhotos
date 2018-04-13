@@ -10,7 +10,7 @@
           <div class="row">
             <div class="col s12">
               <h2 class="header center-on-small-only">Concurso Vacaciones 2018</h2>
-              <h4 class ="light red-text text-lighten-4 center-on-small-only">Eliga a los ganadores de la Categoría 3 :).</h4>
+              <h4 class ="light red-text text-lighten-4 center-on-small-only">Eliga a los ganadores de la Categoría Creatividad e Innovación :).</h4>
             </div>
           </div>
 
